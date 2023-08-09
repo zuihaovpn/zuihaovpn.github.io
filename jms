@@ -1,0 +1,4 @@
+echo "<h1>Hello, GitHub Pages!</h1>" >> index.html
+git add index.html
+git commit -m "Added index.html"
+git push origin main
