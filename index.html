@@ -17,11 +17,34 @@
             border: 2px solid black;
         }
     </style>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
     <div class="headband"></div>
-
+    <div class="cf-turnstile" data-sitekey="yourSitekey" data-callback="javascriptCallback"></div>
+    <form id="contact-form" method="post" action="/send">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" required></textarea>
+  <!-- This is where the Turnstile widget will be rendered -->
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAAAJ04U2rLfYmaw7w" data-callback="javascriptCallback"></div>
+  <button type="submit">Send</button>
+</form>
+<script>
+    // This is the success callback function
+    function onSuccess(token) {
+      // Send the token along with the form data to your server
+      var formData = new FormData(document.getElementById("contact-form"));
+      formData.append("token", token);
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/send");
+      xhr.send(formData);
+    }
+  </script>
     <main class="main">
         <header class="header" itemscope itemtype="http://schema.org/WPHeader">
             <div class="site-brand-container">
