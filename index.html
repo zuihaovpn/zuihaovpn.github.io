@@ -19,11 +19,19 @@
         table {
 	    width: 100%;
             border-collapse: collapse;
+	    overflow-x: auto;
         }
 
         td {
             border: 2px solid black;
         }
+	@media screen and (max-width: 600px) {
+        table {
+            display: block;
+            overflow-x: auto; /* Allows horizontal scrolling on smaller screens */
+        }
+    }
+
     </style>
     <style>
     tbody tr:nth-child(odd) {
