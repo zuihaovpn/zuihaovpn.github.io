@@ -56,20 +56,6 @@
 
   gtag('config', 'G-SY2PH3SHGS');
 </script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
-<script>
-        // Function called once Turnstile API is loaded
-        function onloadTurnstileCallback() {
-            // Render the Turnstile widget inside the element with ID 'example-container'
-            turnstile.render('#example-container', {
-                sitekey: '0x4AAAAAAAJ04U2rLfYmaw7w',  // Replace 'YOUR_SITE_KEY' with your actual site key
-                callback: function(token) {
-                    console.log(`Challenge Success: ${token}`);
-                    // Optionally, send this token to your server to verify or process further
-                }
-            });
-        }
-</script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
