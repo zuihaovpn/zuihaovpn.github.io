@@ -63,27 +63,6 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD4VZSD5"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-	<h1>验证 CAPTCHA</h1>
-    <form  action= method="POST" id="captcha-form">
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAJ04U2rLfYmaw7w"></div>
-        <button type="submit">确认</button>
-    </form>
-    <script>
-        document.getElementById('captcha-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const turnstileResponse = document.querySelector('.cf-turnstile').dataset.cfresponse;
-            fetch('https://3f4f-35-197-28-201.ngrok-free.app/verify-turnstile', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ response_token: turnstileResponse })
-            }).then(response => response.json())
-              .then(data => alert(JSON.stringify(data)))
-              .catch(error => console.error('Error:', error));
-        });
-    </script>
-
     <div class="headband"></div>
 	<div class="post-body" itemprop="articleBody">
 	<h2 id="搬瓦工服务器方案整理"><a href="#搬瓦工服务器方案整理" class="headerlink" title="搬瓦工服务器方案整理"></a>搬瓦工服务器方案整理 循环优惠码: BWHNCXNVXV</h2>
